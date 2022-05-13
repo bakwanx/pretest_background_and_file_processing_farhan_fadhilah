@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">pretest_background_and_file_processing_farhan_fadhilah</string>
+    <string name="title">File Processing</string>
+    <string name="subtitle">Mengolah atau membaca file pada aplikasi Android</string>
+    <string name="subtitle_pdf">Pilih metode dalam membuka file PDF</string>
+    <string name="web_view">Buka dgn WebView</string>
+    <string name="assets">Buka dari Assets</string>
+    <string name="storage">Buka dari Penyimpanan</string>
+    <string name="internet">Buka dari Internet</string>
+    <string name="btn_handle_video">Handle Video</string>
+    <string name="btn_handle_image">Handle Image</string>
+    <string name="btn_handle_pdf">Handle PDF</string>
+    <string name="btn_add_image">Tambah Gambar</string>
 </resources>

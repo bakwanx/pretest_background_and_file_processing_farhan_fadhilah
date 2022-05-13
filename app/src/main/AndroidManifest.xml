@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pretest_background_and_file_processing_farhan_fadhilah">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.webkit.PermissionRequest" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,8 +17,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pretest_background_and_file_processing_farhan_fadhilah">
         <activity
+            android:name=".VideoHandleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ImageHandleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PdfViewActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WebViewActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PdfHandleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
