@@ -43,8 +43,6 @@ class PdfViewActivity : AppCompatActivity() {
             "internet" -> {
                 val fileName = "myFile.pdf"
 
-                Log.d("TAG", "coba: ${Utils.getRoorDirPath(this)}")
-
                 downloadPdfFromInternet(
                     Utils.getPdfUrl(),
                     Utils.getRoorDirPath(this),
@@ -61,7 +59,7 @@ class PdfViewActivity : AppCompatActivity() {
             .onPageError { page, _ ->
                 Utils.showToast(
                     this,
-                    "Error at page $page"
+                    "${getString(R.string.error_at_page)} $page"
                 )
             }
             .load()
@@ -71,13 +69,13 @@ class PdfViewActivity : AppCompatActivity() {
     private fun selectPdfFromStorage(){
         Utils.showToast(
             this,
-            "Select Pdf"
+            getString(R.string.choose_pdf)
         )
         val browseStorage = Intent(Intent.ACTION_GET_CONTENT)
         browseStorage.type = "application/pdf"
         browseStorage.addCategory(Intent.CATEGORY_OPENABLE)
         startActivityForResult(
-            Intent.createChooser(browseStorage, "Select PDF"), PDF_SELECTION_CODE
+            Intent.createChooser(browseStorage, getString(R.string.choose_pdf)), PDF_SELECTION_CODE
         )
     }
 
@@ -97,14 +95,14 @@ class PdfViewActivity : AppCompatActivity() {
         ).build()
             .start(object : OnDownloadListener{
                 override fun onDownloadComplete() {
-                    Utils.showToast(this@PdfViewActivity,"download complete")
+                    Utils.showToast(this@PdfViewActivity,getString(R.string.download_completed))
                     val downloadFile = File(dirPath, fileName)
                     binding.progressBar.visibility = View.GONE
                     showPdfFromFile(downloadFile)
                 }
 
                 override fun onError(error: Error?) {
-                    Utils.showToast(this@PdfViewActivity,"Error in downloading file : $error")
+                    Utils.showToast(this@PdfViewActivity,"${R.string.download_error} : $error")
                     binding.progressBar.visibility = View.GONE
                 }
 
@@ -119,7 +117,7 @@ class PdfViewActivity : AppCompatActivity() {
             .swipeHorizontal(false)
             .enableDoubletap(true)
             .onPageError{ page, _ ->
-                Utils.showToast(this,"Error at page: $page")
+                Utils.showToast(this,"${getString(R.string.error_at_page)}: $page")
             }.load()
     }
 

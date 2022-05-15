@@ -11,4 +11,15 @@
     <string name="btn_handle_image">Handle Image</string>
     <string name="btn_handle_pdf">Handle PDF</string>
     <string name="btn_add_image">Tambah Gambar</string>
+    <string name="title_denied">Permission Denied</string>
+    <string name="message_denied">Permission is denied, Please allow permissions from App Settings.</string>
+    <string name="pass_setting">Pass Settings</string>
+    <string name="cancel">Cancel</string>
+    <string name="choose_image">Pilih Gambar</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="error_at_page">Error at page</string>
+    <string name="choose_pdf">Select Pdf</string>
+    <string name="download_completed">download complete</string>
+    <string name="download_error">Error in downloading file</string>
 </resources>

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.provider.Settings
+import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import com.example.pretest_background_and_file_processing_farhan_fadhilah.databinding.ActivityImageHandleBinding
@@ -65,17 +66,17 @@ class ImageHandleActivity : AppCompatActivity() {
 
     private fun showPermissionDeniedDialog(){
         AlertDialog.Builder(this)
-            .setTitle("Permission Denied")
-            .setMessage("Permission is denied, Please allow permissions from App Settings.")
+            .setTitle(R.string.title_denied)
+            .setMessage(R.string.message_denied)
             .setPositiveButton(
-                "Pass Settings"
+                R.string.pass_setting
             ){_ ,_->
                val intent = Intent()
                intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
                val uri = Uri.fromParts("package", packageName, null)
                intent.data = uri
                startActivity(intent)
-            }.setNegativeButton("Cancel"){
+            }.setNegativeButton(R.string.cancel){
                 dialog,_ -> dialog.cancel()
             }.show()
 
@@ -83,9 +84,9 @@ class ImageHandleActivity : AppCompatActivity() {
 
     private fun chooseImageDialog(){
         AlertDialog.Builder(this)
-            .setMessage("Pilih Gambar")
-            .setPositiveButton("Gallery"){_, _ -> openGallery()}
-            .setNegativeButton("Camera"){_, _ -> openCamera()}
+            .setMessage(R.string.choose_image)
+            .setPositiveButton(R.string.gallery){_, _ -> openGallery()}
+            .setNegativeButton(R.string.camera){_, _ -> openCamera()}
             .show()
     }
 
